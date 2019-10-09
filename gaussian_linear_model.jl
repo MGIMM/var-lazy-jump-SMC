@@ -40,7 +40,7 @@ generateξ = function(N; Lazy = true, step=15)
     end
     @showprogress 1 "Step $p: " for i in 1:N
       if rand() < ϵ*G(p,ξ[p,i].Value)
-        # non-asym case, not working for this model. 
+        # asymmetrical case,i.e., mutation for lazy particle is different from the resampled one, not working for this model. 
         # ξ[p+1,i] = Particle(1,ξ[p,i].Eve,i,ξ[p,i].Value) 
         ξ[p+1,i] = Particle(1,ξ[p,i].Eve,i,rand(Normal(0.9*ξ[p,i].Value,1.0))) 
       else
